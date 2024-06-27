@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JQuery Switch Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>JQuery Switch <small>A template, demonstrating a jquery Switch component</small></h1>
+</div>
+
+<!-- JQuery Switch - START -->
+
+
+<div class="container">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">Preferences</div>
+            <div class="panel-body text-center">
+                <span>Marketing Emails: </span>
+                <input id="switch1" type="checkbox" checked="checked" value="" />
+                <hr />
+
+                <span>Monthly Newsletter: </span>
+                <input id="switch2" type="checkbox" checked="checked" value="" />
+                <hr />
+
+                <span>Keep History: </span>
+                <input id="switch3" type="checkbox" checked="checked" value="" class="long" />
+                <hr />
+
+                <span>Admin Panel: </span>
+                <input id="switch4" type="checkbox" checked="checked" value="" />
+                <hr />
+
+                <span>Support Panel: </span>
+                <input id="switch5" type="checkbox" checked="checked" value="" />
+                <hr />
+
+                <button type="button" class="btn btn-success">Save Settings</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the components to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<style>
+.rounded {
+    border-radius: 5px;
+}
+
+.long {
+    width:110px;
+}
+</style>
+
+
+<script type="text/javascript">
+jQuery(function ($) {
+    $("#switch1").shieldSwitch({
+        onText: "ON",
+        offText: "OFF"
+    });
+    $("#switch2").shieldSwitch({
+        onText: "ON",
+        offText: "OFF"
+    });
+    $("#switch3").shieldSwitch({
+        onText: "Yes, save it",
+        width:"200px",
+        offText: "No, delete it",
+        cls: "long",
+    });
+    $("#switch4").shieldSwitch({
+        onText: "Yes",
+        offText: "No",
+        cls: "rounded",
+    });
+    $("#switch5").shieldSwitch({
+        onText: "Yes",
+        offText: "No",
+        cls: "rounded",
+    });
+});
+</script>
+
+<!-- JQuery Switch - END -->
+
+</div>
+
+</body>
+</html>

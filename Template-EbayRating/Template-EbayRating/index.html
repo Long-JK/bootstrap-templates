@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ebay Rating Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Ebay Rating <small>A responsive ebay-like template</small></h1>
+</div>
+
+<!-- Ebay Rating - START -->
+<div class="container container-style">
+  	<div class="row">
+  		<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  			<div class="row">
+  				<p class="pull-left"><strong>Detailed seller ratings</strong> <small>(last 12 months)</small></p>
+  			<label class="pull-right"><span class="fa fa-question" id="question-mark"></span></label>
+  			</div>
+  			<div class="row">
+  				<div class="panel panel-default">
+  				<div class="panel-heading" id="panel-style">
+  					<div class="row">
+  						<div class="col-xs-5 col-sm-4 col-md-5">
+  							<p class="headings"><strong>Criteria</strong></p>
+  						</div>
+  						<div class="col-xs-4 col-sm-3 col-md-3">
+  							<p class="headings"><strong>Average rating</strong></p>
+  						</div>
+  						<div class="col-xs-3 col-sm-4 col-md-4">
+  							<p class="headings"><strong>Number of ratings</strong></p>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="panel-body">
+  					<div class="row">
+  						<div class="col-xs-5 col-sm-4 col-md-5">
+  							<p>Item as described</p>
+  							<p>Communication</p>
+  							<p>Shipping time</p>
+  							<p>Shipping and handling charges</p>
+  						</div>
+  						<div class="col-xs-3 col-sm-3 col-md-3">
+  							<div id="rate" class="ratings"></div>
+  							<div id="rate1" class="ratings"></div>
+  							<div id="rate2" class="ratings"></div>
+  							<div id="rate3" class="ratings"></div>
+  						</div>
+  						<div class="col-xs-4 col-sm-3 col-md-2 text-center">
+  							<div>
+  							  <p id="p1" class="parag">50</p>
+                              <p id="p2" class="parag">46</p>
+                              <p id="p3" class="parag">23</p>
+                              <p id="p4" class="parag">43</p>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+<style>
+    .container-style {
+	    margin-top: 80px;
+    }
+
+    .headings {
+        margin-bottom: 0;
+    }
+
+    .ratings {
+	    margin-bottom: 10px;
+    }
+
+    #question-mark {
+        cursor: pointer;
+        border: 2px solid gray;
+        border-radius: 50%;
+        padding: 2px 5px 2px 5px;
+        background-color: #d7dbe2; 
+    }
+
+    #panel-style {
+	    background: #D6CECE;
+    }
+
+    button[type="submit"] {
+	    background: #D6CECE;
+    }
+
+@media screen and (max-width: 320px) {
+  
+    .ratings {
+        margin-top: 5px;
+    }
+  
+    #rate2 {
+        margin-top: 0px;
+    }
+  
+    #rate3 {
+        margin-top: 0px;
+    }
+  
+    #rate1 {
+        margin-top: 16px;
+    }
+  
+    .parag {
+        font-size: 20px;
+    }
+  
+    #p2 {
+        margin-top: 20px;
+        margin-bottom: 3px;
+    }
+  
+    #p3 {
+        margin-bottom: 3px;
+    }
+}
+</style>
+
+<script>
+    $(function () {
+        $('#rate').shieldRating({
+            max: 5,
+            step: 0.1,
+            value: 4,
+            markPreset: false
+        });
+
+        $('#rate1').shieldRating({
+            max: 5,
+            step: 0.1,
+            value: 1,
+            markPreset: false
+        });
+
+        $('#rate2').shieldRating({
+            max: 5,
+            step: 0.1,
+            value: 3,
+            markPreset: false
+        });
+
+        $('#rate3').shieldRating({
+            max: 5,
+            step: 0.1,
+            value: 2,
+            markPreset: false
+        });
+
+        $('#question-mark').shieldTooltip({
+            position: "top",
+            content: "Need help?"
+        });
+    })
+</script>
+<!-- Ebay Rating - END -->
+
+</div>
+
+</body>
+</html>

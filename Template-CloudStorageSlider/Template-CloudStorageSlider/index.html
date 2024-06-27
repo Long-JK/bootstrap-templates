@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cloud Virtual Sever Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Cloud Virtual Sever <small>A template, demonstrating a configuration tool for a server</small></h1>
+</div>
+
+<!-- Cloud Virtual Sever - START -->
+<div class="container">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Order Virtual Machine</div>
+            <div class="panel-body">
+                <div class="order">
+                    <div class="item">
+                        <div class="title">CPU</div>
+                        <div class="input">
+                            <input type="text" id="cpu" />
+                        </div>
+                        <div class="info">
+                            <span id="cpuInfo">1 core</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">Memory</div>
+                        <div class="input">
+                            <input type="text" id="memory" />
+                        </div>
+                        <div class="info">
+                            <span id="memoryInfo">1 GB</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">Space</div>
+                        <div class="input">
+                            <input type="text" id="disk" />
+                        </div>
+                        <div class="info">
+                            <span id="diskInfo">10 GB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="totalInner">
+                        <div class="price">
+                            <span id="priceValue">0</span><span style="color: #808080;">/mo</span>
+                        </div>
+                        <div class="purchase">
+                            <button id="purchaseBtn">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the slider to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#cpu").shieldSlider({
+            cls: "slider",
+            min: 0,
+            max: 4,
+            height: 30,
+            value: 0,
+            values: {
+                enabled: false
+            },
+            events: {
+                slide: function (e) {
+                    var cores = Math.pow(2, this.value());
+                    $("#cpuInfo").html(cores + " core" + (cores > 1 ? "s" : ""));
+                },
+                change: updatePrice
+            }
+        });
+        $("#memory").shieldSlider({
+            cls: "slider",
+            min: 0,
+            max: 5,
+            height: 30,
+            values: {
+                enabled: false
+            },
+            events: {
+                slide: function (e) {
+                    $("#memoryInfo").html(Math.pow(2, this.value()) + " GB");
+                },
+                change: updatePrice
+            }
+        });
+        $("#disk").shieldSlider({
+            cls: "slider",
+            min: 10,
+            max: 1000,
+            step: 10,
+            height: 30,
+            values: {
+                enabled: false
+            },
+            events: {
+                slide: function (e) {
+                    $("#diskInfo").html(this.value() + " GB");
+                },
+                change: updatePrice
+            }
+        });
+        $("#purchaseBtn").shieldButton();
+        function updatePrice() {
+            var cpuCores = Math.pow(2, $("#cpu").swidget().value()),
+                memory = Math.pow(2, $("#memory").swidget().value()),
+                diskSize = $("#disk").swidget().value(),
+                total;
+            // the simple formula for calculating the price is:
+            // $5 + cores * 2.0 + memoryGB * 1.0 + diskSizeGB * 0.05
+            total = 5 + cpuCores * 2 + memory * 1 + diskSize * 0.05;
+            $("#priceValue").html(shield.format("{0:c}", total));
+        }
+        updatePrice();
+    });
+</script>
+<style>
+.heading {
+    font-size: 27px;
+    line-height: 120%;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.item {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.item .title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.item .input {
+}
+
+.item .info {
+    margin-top: 5px;
+    color: #808080;
+}
+
+.total {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid #808080;
+    text-align: right;
+}
+
+.totalInner {
+    display: inline-block;
+    width: 220px;
+}
+
+ .totalInner .price {
+     margin-top: 20px;
+     font-size: 22px;
+ }
+
+.totalInner .price #priceValue {
+    font-size: 32px;
+}
+
+.totalInner .purchase {
+    margin-top: 5px;
+    border-top: 2px solid #333333;
+    padding-top: 10px;
+}
+
+ .totalInner #purchaseBtn {
+     width: 100%;
+     font-size: 24px;
+ }
+
+.slider {
+    width: 100%;
+}
+</style>
+
+<!-- Cloud Virtual Sever - END -->
+
+</div>
+
+</body>
+</html>

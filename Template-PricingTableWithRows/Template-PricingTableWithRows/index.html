@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pricing Tables With Rows Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Pricing Tables With Rows <small>A template, demonstrating a pricing table layout with rows</small></h1>
+</div>
+
+<!-- Pricing Tables With Rows - START -->
+<div class="container pricing-table-container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-sm-8 col-md-8">
+                <p><strong>Trial - sign up for 30 days free trial</strong></p>
+              </div>
+              <div class="col-sm-4 col-md-4">
+                <button type="submit" class="btn btn-success pull-right">Sign up and download</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-3 col-md-3 price_border">
+                <p class="price">0$</p>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul>
+                  <li>Personal use <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Single commercial license <span class="glyphicon glyphicon-remove"></span></li>
+                  <li>Multiple site commercial license <span class="glyphicon glyphicon-remove"></span></li>
+                  <li>Technical support <span class="glyphicon glyphicon-remove"></span></li>
+                </ul>
+              </div>
+              <div class="col-sm-2 col-md-2 qrdiv">
+                <div id="qrcode"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-sm-8 col-md-8">
+                <p><strong>Standard</strong> <small>half of the widgets included</small></p>
+              </div>
+              <div class="col-sm-4 col-md-4">
+                <button type="submit" class="btn btn-info pull-right">Buy and download</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-3 col-md-3 price_border">
+                <p class="price">50$</p>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul>
+                  <li>Personal use <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Single commercial license <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Multiple site commercial license <span class="glyphicon glyphicon-remove"></span></li>
+                  <li>Technical support <span class="glyphicon glyphicon-ok"></span></li>
+                </ul>
+              </div>
+              <div class="col-sm-2 col-md-2 qrdiv">
+                <div id="qrcode1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-sm-8 col-md-8">
+                <p><strong>Premium</strong> <small>every widget included</small></p>
+              </div>
+              <div class="col-sm-4 col-md-4">
+                <button type="submit" class="btn btn-primary pull-right">Buy and download</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-3 col-md-3 price_border">
+                <p class="price">99$</p>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul>
+                  <li>Personal use <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Single commercial license <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Multiple site commercial license <span class="glyphicon glyphicon-ok"></span></li>
+                  <li>Technical support <span class="glyphicon glyphicon-ok"></span></li>
+                </ul>
+              </div>
+              <div class="col-sm-2 col-md-2 qrdiv">
+                <div id="qrcode2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+    .pricing-table-container {
+        margin-top: 25px;
+    }
+
+    .pricing-table-container p {
+        font-size: 20px;
+        margin-bottom: 0px;
+        padding-top: 3px;
+    }
+
+    .pricing-table-container small {
+        font-size: 13px;
+    }
+
+    .pricing-table-container .price_border {
+        border-right: 1px dotted black;
+        height: 7em;
+    }
+
+    .pricing-table-container .price {
+        color: green;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .pricing-table-container .qrdiv {
+        border-left: 1px dotted black;
+        height: 7em;
+    }
+
+    .pricing-table-container .paragraph_options {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+
+    .pricing-table-container .pricing-table-container ul li {
+        font-size: 15px;
+        border-bottom: 1px solid black;
+    }
+
+@media screen and (max-width: 768px) {
+    .pricing-table-container .price_border {
+        border: none;
+    }
+
+    .pricing-table-container .qrdiv {
+        border: none;
+        margin-left: 75px;
+    }
+
+    .pricing-table-container ul {
+        -webkit-padding-start: 0;
+    }
+
+    .pricing-table-container ul li {
+        list-style-type: none;
+    }
+}
+</style>
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script>
+    $(function () {
+        $('#qrcode').shieldQRcode({
+            mode: "byte",
+            size: 100,
+            value: "https://www.prepbootstrap.com"
+        });
+
+        $('#qrcode1').shieldQRcode({
+            mode: "byte",
+            size: 100,
+            value: "https://demos.shieldui.com"
+        });
+
+        $('#qrcode2').shieldQRcode({
+            mode: "byte",
+            size: 100,
+            value: "https://www.shieldui.com"
+        })
+    })
+</script>
+<!-- Pricing Tables With Rows - END -->
+
+</div>
+
+</body>
+</html>

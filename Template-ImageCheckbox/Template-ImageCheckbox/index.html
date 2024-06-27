@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Image Checkbox Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Image Checkbox <small>Bootstrap template for multiple image selection</small></h1>
+</div>
+
+<!-- Image Checkbox - START -->
+
+<div class="container">
+    <div class="col-md-3 text-center">
+        <label class="image-checkbox" title="England">
+            <img src="http://www.prepbootstrap.com/Content/images/template/gamesschedule/england.jpg" />
+            <input type="checkbox" name="team[]" value="england" checked="checked" />
+        </label>
+    </div>
+    <div class="col-md-3 text-center">
+        <label class="image-checkbox" title="Germany">
+            <img src="http://www.prepbootstrap.com/Content/images/template/gamesschedule/germany.jpg" />
+            <input type="checkbox" name="team[]" value="germany" />
+        </label>
+    </div>
+    <div class="col-md-3 text-center">
+        <label class="image-checkbox" title="Italy">
+            <img src="http://www.prepbootstrap.com/Content/images/template/gamesschedule/italy.jpg" />
+            <input type="checkbox" name="team[]" value="italy" />
+        </label>
+    </div>
+    <div class="col-md-3 text-center">
+        <label class="image-checkbox" title="Spain">
+            <img src="http://www.prepbootstrap.com/Content/images/template/gamesschedule/spain.jpg" />
+            <input type="checkbox" name="team[]" value="spain" />
+        </label>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        // init the state from the input
+        $(".image-checkbox").each(function () {
+            if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+                $(this).addClass('image-checkbox-checked');
+            }
+            else {
+                $(this).removeClass('image-checkbox-checked');
+            }
+        });
+
+        // sync the state to the input
+        $(".image-checkbox").on("click", function (e) {
+            if ($(this).hasClass('image-checkbox-checked')) {
+                $(this).removeClass('image-checkbox-checked');
+                $(this).find('input[type="checkbox"]').first().removeAttr("checked");
+            }
+            else {
+                $(this).addClass('image-checkbox-checked');
+                $(this).find('input[type="checkbox"]').first().attr("checked", "checked");
+            }
+
+            e.preventDefault();
+        });
+    });
+</script>
+
+<style>
+    .image-checkbox
+    {
+        cursor: pointer;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border: 4px solid transparent;
+        outline: 0;
+    }
+
+        .image-checkbox input[type="checkbox"]
+        {
+            display: none;
+        }
+
+    .image-checkbox-checked
+    {
+        border-color: #f58723;
+    }
+</style>
+
+<!-- Image Checkbox - END -->
+
+</div>
+
+</body>
+</html>
